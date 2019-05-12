@@ -29,18 +29,20 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   props: ['id'],
   data() {
     return {}
   },
   created() {
-    this.$store.dispatch('fetchEvent', this.id)
+    this.$store.dispatch('event/fetchEvent', this.id)
   },
   computed: {
     event() {
-      return this.$store.getters.getEventById(this.id)
-    }
+      return this.getEventById(this.id)
+    },
+    ...mapGetters('event', ['getEventById'])
   }
 }
 </script>
