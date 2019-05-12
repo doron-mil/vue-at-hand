@@ -34,21 +34,14 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 
 export default {
-  props: ['id'],
-  data() {
-    return {}
-  },
-  created() {
-    this.$store.dispatch('event/fetchEvent', this.id)
-  },
-  computed: {
-    event() {
-      return this.getEventById(this.id)
-    },
-    ...mapGetters('event', ['getEventById'])
+  props: {
+    event: {
+      // Simply receive the event to render
+      type: Object,
+      required: true
+    }
   }
 }
 </script>
