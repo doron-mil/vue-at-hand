@@ -68,6 +68,7 @@ export default {
   },
   methods: {
     createEvent() {
+       console.log('1111');
       this.$store
         .dispatch('event/createEvent', this.event)
         .then(() => {
