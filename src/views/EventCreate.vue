@@ -95,8 +95,8 @@
         type="submit"
         :disabled="$v.$anyError"
         buttonClass="-fill-gradient"
-        >Submit</BaseButton
-      >
+        >Submit
+      </BaseButton>
       <p v-if="$v.$anyError" class="errorMessage">
         Please fill out the required field(s).
       </p>
